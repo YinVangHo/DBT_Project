@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: grocery_store
+    database: DBT_YinVang
+    schema: RAW
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: products
