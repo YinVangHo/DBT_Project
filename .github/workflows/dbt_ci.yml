@@ -33,10 +33,6 @@ jobs:
 
 #Config Var_Env
 
-jobs:
-  dbt-test:
-    runs-on: ubuntu-latest
-
     env:
       # PROJECT_DIR: ./dbt_101
       # DBT_PROFILES_DIR: ./profiles
