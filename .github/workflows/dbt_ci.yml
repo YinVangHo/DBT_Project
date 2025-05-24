@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.9'
 
-#Configure code quality
+      #Configure code quality
       - name: Install dbt
         run: |
           pip install sqlfluff dbt-core dbt-snowflake
@@ -22,7 +22,7 @@ jobs:
       - name: Run dbt tests
         run: sqlfluff lint .
 
-#Configure the Data Testing
+      #Configure the Data Testing
       - name: Install dbt
         run: |
           pip install -r requirements.txt
@@ -31,12 +31,7 @@ jobs:
       - name: Run dbt tests
         run: dbt build --target ci
 
-#Config Var_Env
-
-jobs:
-  dbt-test:
-    runs-on: ubuntu-latest
-
+    #Config Var_Env
     env:
       # PROJECT_DIR: ./dbt_101
       # DBT_PROFILES_DIR: ./profiles
