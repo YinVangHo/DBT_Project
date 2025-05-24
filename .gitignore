@@ -5,3 +5,4 @@ logs/
 *.pem
 *.pub
 venv/
+.DS_Store
