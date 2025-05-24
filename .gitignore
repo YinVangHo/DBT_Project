@@ -6,3 +6,4 @@ logs/
 *.pub
 venv/
 .DS_Store
+.secret

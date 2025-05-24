@@ -31,7 +31,7 @@ jobs:
       - name: Run dbt tests
         run: dbt build --target ci
 
-#Config Var
+#Config Var_Env
 
 jobs:
   dbt-test:
