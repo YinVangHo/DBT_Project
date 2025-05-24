@@ -21,7 +21,7 @@ jobs:
         working-directory: dbt_101
       
       - name: Run sqlfluff
-        run: sqlfluff lint .
+        run: sqlfluff lint . --dialect snowflake
         working-directory: dbt_101
       
       - name: Run dbt tests
