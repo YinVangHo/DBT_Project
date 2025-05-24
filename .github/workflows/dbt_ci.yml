@@ -18,15 +18,11 @@ jobs:
         run: |
           pip install sqlfluff dbt-core dbt-snowflake
           dbt deps
+        working-directory: dbt_101
       
-      - name: Run dbt tests
+      - name: Run sqlfluff
         run: sqlfluff lint .
-
-      #Configure the Data Testing
-      - name: Install dbt
-        run: |
-          pip install -r requirements.txt
-          dbt deps
+        working-directory: dbt_101
       
       - name: Run dbt tests
         run: dbt build --target ci
