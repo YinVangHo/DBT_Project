@@ -24,8 +24,8 @@ joined as (
         p.category,
         sum(oi.quantity) as total_quantity_sold,
         sum(oi.quantity * p.price) as total_sales_usd
-    from order_items oi
-    join products p on oi.product_id = p.product_id
+    from order_items as oi
+    inner join products as p on oi.product_id = p.product_id
     group by 1, 2, 3
 )
 
