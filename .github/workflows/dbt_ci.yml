@@ -25,7 +25,8 @@ jobs:
         working-directory: dbt_101
       
       - name: Run dbt tests
-        run: dbt build --target ci
+        run: dbt build --target ci --profiles-dir ./profile
+        working-directory: dbt_101
 
     #Config Var_Env
     env:
