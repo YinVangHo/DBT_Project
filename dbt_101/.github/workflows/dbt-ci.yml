@@ -16,10 +16,11 @@ jobs:
       - name: Install dbt
         run: |
           pip install sqlfluff dbt-core dbt-snowflake
+          cd dbt_101
           dbt deps
       
       - name: Run dbt tests
-        run: sqlfluff lint .
+        run: sqlfluff lint . --dialect snowflake 
 
       - name: Install dbt
         run: |
