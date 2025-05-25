@@ -1,14 +1,8 @@
 name: dbt CI
-##on:
- ## pull_request:
-   ## branches: [ main ]
+
 on:
-  push:
-    branches:
-      - '**'
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   dbt-test:
@@ -30,10 +24,7 @@ jobs:
       - name: Run sqlfluff
         run: sqlfluff lint . --dialect snowflake
         working-directory: dbt_101
-      
-      - name: Debug env var for user
-        run: echo "SNOWFLAKE_CI_USER: $SNOWFLAKE_CI_USER"
-      
+
       - name: Run dbt tests
         run: dbt build --target ci --profiles-dir ./profile
         working-directory: dbt_101
