@@ -1,0 +1,9 @@
+
+target/
+dbt_packages/
+logs/
+*.pem
+*.pub
+venv/
+.DS_Store
+.secret

@@ -6,10 +6,10 @@ with source as (
 
 renamed as (
     select
-        "ORDER_ID" as order_id,
-        "ORDER_ITEM_ID" as order_item_id,
-        "PRODUCT_ID" as product_id,
-        "QUANTITY" as quantity
+        order_id,
+        order_item_id,
+        product_id,
+        quantity
     from source
 )
 

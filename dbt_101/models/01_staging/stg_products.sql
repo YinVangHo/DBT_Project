@@ -6,10 +6,10 @@ with source as (
 
 renamed as (
     select
-        "ID" as product_id,
-        "NAME" as product_name,
-        "PRICE"::float as price,
-        "CATEGORY" as category
+        id as product_id,
+        name as product_name,
+        price::float as price,
+        category
     from source
 )
 

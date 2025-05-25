@@ -37,9 +37,9 @@ order_details as (
         o.customer_id,
         o.order_date,
         oi.quantity * p.price as amount_spent
-    from order_items oi
-    join orders o on o.order_id = oi.order_id
-    join products p on p.product_id = oi.product_id
+    from order_items as oi
+    inner join orders as o on oi.order_id = o.order_id
+    inner join products as p on oi.product_id = p.product_id
 ),
 
 customer_summary as (
@@ -50,8 +50,8 @@ customer_summary as (
         sum(od.amount_spent) as total_amount_spent_usd,
         min(od.order_date) as first_order_date,
         max(od.order_date) as last_order_date
-    from customers c
-    join order_details od on c.customer_id = od.customer_id
+    from customers as c
+    inner join order_details as od on c.customer_id = od.customer_id
     group by 1, 2
 )
 

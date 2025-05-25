@@ -6,10 +6,10 @@ with source as (
 
 renamed as (
     select
-        "ID" as order_id,
-        "DATE"::date as order_date,
-        "CUSTOMER_ID" as customer_id,
-        "STATUS" as status
+        id as order_id,
+        date::date as order_date,
+        customer_id,
+        status
     from source
 )
 
